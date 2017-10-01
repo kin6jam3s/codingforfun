@@ -28,7 +28,7 @@ def search_event_loop():
                 mb += r.speed
                 gb = mb / 1000
                 print('--------------------------------------------------------------------------------------')
-                print('NAME: {} SPEED: {}, ID: {} IPv4 Addr: {} IPv6 Addr: {}'.format(
+                print('NAME: {} -- SPEED: {} -- ID: {} -- IPv4 Addr: {} -- IPv6 Addr: {}'.format(
                     r.name, r.speed, r.id, r.ipaddr4, r.ipaddr6
                 ))
             print('--------------------------------------------------------------------------------------')
