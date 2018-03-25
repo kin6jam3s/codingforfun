@@ -7,24 +7,26 @@ NextixlanResult = collections.namedtuple(
     'name,id,ix_id,speed,ipaddr4,ipaddr6,net_id,notes,created,updated,status,ixlan_id,asn,is_rs_peer'
 )
 
+
 class PeeringClient:
     def __init__(self, search_text):
         self.search_text = search_text
 
     def perform_search(self):
         url = 'https://www.peeringdb.com/api/netixlan?asn={}'.format(self.search_text)
-
+        #print(url)
         r = requests.get(url)
         info = r.json()
 
         results = info['data']
+        print(results)
 
         nextixlan = [
             NextixlanResult(**m)
             for m in results
             ]
+        # print(nextixlan)
         return nextixlan
-
 
 
 
